@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuad Mustafayev | Portfolio</title>
+
+    <!-- Saydo CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/saydo-css/dist/saydo.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #090909;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        header {
+            padding: 25px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #a3e635;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #a3e635;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 0;
+        }
+
+        .tag {
+            color: #a3e635;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 9vw, 100px);
+            line-height: 1.05;
+            letter-spacing: -5px;
+            max-width: 900px;
+        }
+
+        h1 span {
+            color: #a3e635;
+        }
+
+        .hero-description {
+            color: #999;
+            max-width: 500px;
+            margin: 25px 0;
+            font-size: 17px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border: 1px solid #a3e635;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: #a3e635;
+            color: #090909;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            opacity: .8;
+        }
+
+        section {
+            padding: 90px 0;
+            border-top: 1px solid #222;
+        }
+
+        .section-label {
+            color: #a3e635;
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 38px;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            color: #aaa;
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        .about-text strong {
+            color: white;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            border: 1px solid #292929;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .stat h3 {
+            font-size: 28px;
+            color: #a3e635;
+        }
+
+        .stat p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 12px 20px;
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 5px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .skill:hover {
+            border-color: #a3e635;
+            color: #a3e635;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 8px;
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .project:hover {
+            border-color: #a3e635;
+            transform: translateY(-5px);
+        }
+
+        .project-number {
+            color: #a3e635;
+            font-size: 13px;
+        }
+
+        .project h3 {
+            margin: 15px 0;
+            font-size: 22px;
+        }
+
+        .project p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #a3e635;
+            font-size: 14px;
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social {
+            border: 1px solid #292929;
+            padding: 15px 22px;
+            border-radius: 5px;
+            color: #aaa;
+            transition: .3s;
+        }
+
+        .social:hover {
+            color: #a3e635;
+            border-color: #a3e635;
+        }
+
+        .contact-box {
+            background: #111;
+            border: 1px solid #292929;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-box p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 13px;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 700px) {
+            .nav-links {
+                gap: 12px;
+                font-size: 12px;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .stats,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .contact-box {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .nav-links a:nth-child(2) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">FUAD<span>.</span></a>
+
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <section class="hero" style="border: none;">
+                <p class="tag">Personal Portfolio / 2026</p>
+
+                <h1>
+                    Curious by nature.<br>
+                    <span>Confused by code.</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm Fuad Mustafayev — a student interested in programming
+                    and technology. Just exploring, experimenting and
+                    occasionally destroying digital things with purpose.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">Explore my work ↗</a>
+                    <a href="#contact" class="btn">Get in touch</a>
+                </div>
+            </section>
+        </div>
+
+        <section id="about">
+            <div class="container">
+                <p class="section-label">01 / ABOUT ME</p>
+                <h2>A little about me.</h2>
+
+                <p class="about-text">
+                    I'm <strong>Fuad Mustafayev</strong>, a student with a
+                    growing interest in technology and programming.
+                    Currently at the very beginning of my coding journey.
+                    Learning, experimenting and spending an unreasonable
+                    amount of AI tokens along the way.
+                </p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <h3>01</h3>
+                        <p>Learning to code</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>∞</h3>
+                        <p>AI tokens wasted</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Probably gaming</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <p class="section-label">02 / SKILLS & INTERESTS</p>
+                <h2>Things I mess with.</h2>
+
+                <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">Technology</span>
+                    <span class="skill">AI Tools</span>
+                    <span class="skill">Codex</span>
+                    <span class="skill">Claude Code</span>
+                    <span class="skill">Gaming</span>
+                    <span class="skill">Experimenting</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <p class="section-label">03 / PROJECTS</p>
+                <h2>My digital playground.</h2>
+
+                <div class="projects">
+
+                    <div class="project">
+                        <span class="project-number">PROJECT / 001</span>
+                        <h3>Personal Portfolio</h3>
+                        <p>
+                            A little corner of the internet to introduce
+                            myself. Built while figuring things out.
+                        </p>
+                        <a href="https://github.com/fdhwkng" target="_blank">
+                            View GitHub ↗
+                        </a>
+                    </div>
+
+                    <div class="project">
+                        <span class="project-number">PROJECT / 002</span>
+                        <h3>AI Experiments</h3>
+                        <p>
+                            Testing AI tools, generating ideas and
+                            occasionally making them do all the work.
+                        </p>
+                        <a href="https://github.com/fdhwkng" target="_blank">
+                            Explore ↗
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <p class="section-label">04 / OFFLINE ACTIVITIES</p>
+                <h2>When I'm not coding.</h2>
+
+                <div class="skills">
+                    <span class="skill">CS2</span>
+                    <span class="skill">GTA V</span>
+                    <span class="skill">Minecraft</span>
+                    <span class="skill">Valorant</span>
+                    <span class="skill">RDR2</span>
+                    <span class="skill">Cyberpunk 2077</span>
+                    <span class="skill">Blasphemous</span>
+                    <span class="skill">Mortal Kombat 11</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <p class="section-label">05 / CONTACT</p>
+                <div class="contact-box">
+                    <h2>Let's connect.</h2>
+
+                    <p>
+                        Have something interesting? Or just want to say hi?
+                        My inbox is open.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="mailto:fdhwkng@protonmail.com"
+                           class="btn btn-primary">
+                            Send an email ↗
+                        </a>
+                    </div>
+
+                    <br>
+
+                    <div class="socials">
+                        <a class="social" href="https://github.com/fdhwkng" target="_blank">GitHub ↗</a>
+
+                        <a class="social" href="https://instagram.com/fu4dex" target="_blank">Instagram ↗</a>
+
+                        <a class="social" href="https://steamcommunity.com/id/fdhwkng" target="_blank">Steam ↗</a>
+
+                        <a class="social" href="https://discord.com/users/fuaddidaqaqulya" target="_blank">Discord ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <span>© 2026 Fuad Mustafayev</span>
+            <span>Response time: faster than my coding skills.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
